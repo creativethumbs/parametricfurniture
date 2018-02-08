@@ -35,6 +35,7 @@ void setup() {
 
 void draw() {
   background(125); 
+  
   translate(width/2, height/2);
   
   if (export) {
@@ -43,6 +44,7 @@ void draw() {
 
   noFill();  
 
+  scale(2);
   shape(blob,0,0); 
   
   //scale(0.7); 

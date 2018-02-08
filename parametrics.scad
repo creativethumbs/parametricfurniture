@@ -1,4 +1,4 @@
-thickness = 2; 
+thickness = 4; 
 gap = 1; 
 
 module weirdshape() {
@@ -18,20 +18,11 @@ module weirdshape2() {
     weirdshape(); 
     weirdshapehole(); 
     }
-}
- 
-//translate([30,30,0])
-//for(i = [1:19]) {
-//    rotate([0,0,i*2]) translate([0,0,thickness*i]) {
-//        scale([0.7, 0.7, 2]) {
-//            weirdshape(); 
-//        }
-//    }
-//}
+} 
 
 difference() {
     union() {
-for(i = [1:14]) {
+for(i = [1:15]) {
     rotate([0,0,i*5]) translate([0,0,thickness*i]) {
         scale([pow(0.95,i), pow(0.95,i), 1]) {
             weirdshape2(); 
@@ -40,11 +31,12 @@ for(i = [1:14]) {
 }
 }
 
-translate([30,30,0]) {
+translate([60,60,17*thickness]) scale([1,1,-1]) {
     union() {
 for(i = [1:19]) {
-    rotate([0,0,i*2]) translate([0,0,thickness*i]) {
-        scale([0.7, 0.7, 2]) {
+     rotate([0,0,i*5])  translate([0,0,thickness*i]) 
+    scale([0.8, 0.8, 2]) {
+         {
             weirdshape(); 
         }
     }
